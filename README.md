@@ -114,3 +114,12 @@ User Story: As a user, I should be able to view a chart showing the upcoming eve
   - Given app has loaded and the user has received a list of all upcoming event in each city
   - When the user pushes the button to display the chart view
   - Then the app will display a chart showing the number of upcoming events in each city.
+
+## Serverless Functions
+
+This project will use serverless functions to complete the following:
+
+- To request and return a token for user authentication
+- Once received, pass along token for requests to Google Calendar API, including:
+  - Loading list of events from Google Calendar
+  - Querying database to return list of events that match user input search parameters
