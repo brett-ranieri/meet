@@ -66,4 +66,19 @@ describe("<App /> integration", () => {
 		expect(AppWrapper.state("events")).toEqual(allEvents);
 		AppWrapper.unmount();
 	});
+
+	test('App passes "numberOfEvents" as a prop to NumberOfEvents', () => {
+		const AppWrapper = mount(<App />);
+		const AppNumberOfState = AppWrapper.state("numberOfEvents");
+		expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberOfState);
+		AppWrapper.unmount();
+	});
+
+	// test('App passes "locations" as a prop to CitySearch', () => {
+	// 	const AppWrapper = mount(<App />);
+	// 	const AppLocationsState = AppWrapper.state("locations");
+	// 	expect(AppLocationsState).not.toEqual(undefined);
+	// 	expect(AppWrapper.find(CitySearch).props().locations).toEqual(AppLocationsState);
+	// 	AppWrapper.unmount();
+	// });
 });
