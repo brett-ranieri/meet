@@ -1,6 +1,6 @@
 import { mockData } from "./mock-data";
 import axios from "axios";
-// import { NProgress } from "./nprogress";
+import { NProgress } from "./nprogress";
 
 export const extractLocations = (events) => {
 	var extractLocations = events.map((event) => event.location);
@@ -44,10 +44,10 @@ const getToken = async (code) => {
 };
 
 export const getEvents = async () => {
-	// NProgress.start();
+	NProgress.start();
 
 	if (window.location.href.startsWith("http://localhost")) {
-		// NProgress.done();
+		NProgress.done();
 		return mockData;
 	}
 
@@ -63,7 +63,7 @@ export const getEvents = async () => {
 			localStorage.setItem("lastEvents", JSON.stringify(result.data));
 			localStorage.setItem("locations", JSON.stringify(locations));
 		}
-		// NProgress.done();
+		NProgress.done();
 		return result.data.events;
 	}
 };
