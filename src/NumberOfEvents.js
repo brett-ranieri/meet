@@ -2,14 +2,15 @@ import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
 	state = {
-		query: 32,
+		query: 24,
 	};
 
 	handleNumberChanged = (event) => {
-		const value = event.target.value;
+		let value = event.target.value;
 		this.setState({
 			query: value,
 		});
+		this.props.updateEvents(null, value);
 	};
 
 	render() {
