@@ -24,6 +24,13 @@ describe("<App /> component", () => {
 	test("render number of events", () => {
 		expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
 	});
+
+	test("app has numberOfEvents state", () => {
+		const AppWrapper = mount(<App />);
+		AppWrapper.setState({ numberOfEvents: 32 });
+		const AppState = AppWrapper.state("numberOfEvents");
+		expect(AppState).toEqual(32);
+	});
 });
 //best practice to seperate unit tests from integration tests
 describe("<App /> integration", () => {
@@ -69,16 +76,43 @@ describe("<App /> integration", () => {
 
 	test('App passes "numberOfEvents" as a prop to NumberOfEvents', () => {
 		const AppWrapper = mount(<App />);
-		const AppNumberOfState = AppWrapper.state("numberOfEvents");
-		expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberOfState);
+		const AppNumberOfEventsState = AppWrapper.state("numberOfEvents");
+		expect(AppNumberOfEventsState).not.toEqual(undefined);
+		expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppNumberOfEventsState);
 		AppWrapper.unmount();
 	});
 
-	// test('App passes "locations" as a prop to CitySearch', () => {
-	// 	const AppWrapper = mount(<App />);
-	// 	const AppLocationsState = AppWrapper.state("locations");
-	// 	expect(AppLocationsState).not.toEqual(undefined);
-	// 	expect(AppWrapper.find(CitySearch).props().locations).toEqual(AppLocationsState);
-	// 	AppWrapper.unmount();
-	// });
+	test("numberOfEvents state set by value change of NumberOfEvents", async () => {
+		const AppWrapper = mount(<App />);
+		const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents).find(".number-of-events");
+		const eventObject = { target: { value: 24 } };
+		NumberOfEventsWrapper.simulate("change", eventObject);
+		await getEvents();
+		expect(AppWrapper.state("numberOfEvents")).toBe(24);
+		AppWrapper.unmount();
+	});
+
+	test("length of Events array matches numberOfEvents state", async () => {
+		const AppWrapper = mount(<App />);
+		const allEvents = await getEvents();
+		AppWrapper.setState({
+			events: allEvents,
+		});
+		expect(AppWrapper.state("events").length).toEqual(AppWrapper.state("numberOfEvents"));
+		AppWrapper.unmount();
+	});
+
+	test("changing NumberOfEvents value updates number of Events displayed", async () => {
+		const AppWrapper = mount(<App />);
+		const allEvents = await getEvents();
+		AppWrapper.setState({
+			events: allEvents,
+		});
+		const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents).find(".number-of-events");
+		const eventObject = { target: { value: 4 } };
+		NumberOfEventsWrapper.simulate("change", eventObject);
+		await getEvents();
+		expect(AppWrapper.state("events")).toHaveLength(4);
+		AppWrapper.unmount();
+	});
 });
