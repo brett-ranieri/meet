@@ -62,7 +62,7 @@ User Story: As a user, I should be able to filter the list of events by city so 
 User Story: As a user, I should be able to show/hide the details of an event so that I can see more or less information about an event.
 
 - Scenario 1: An event element is collapsed by default
-  - Given the main page has been opened and a list of events has been displayed
+  - Given the main page has been opened
   - When the user has not selected any specific event
   - Then no event details will be visible to the user
 - Scenario 2: User can expand an event to see its details
