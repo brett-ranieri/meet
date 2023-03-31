@@ -17,14 +17,12 @@ class Event extends Component {
 		return (
 			<div className='event'>
 				<h2 className='event-title'>{event.summary}</h2>
-				<p className='event-time'>
-					{new Date(event.start.dateTime).toString()}
-				</p>
+				<p className='event-time'>{new Date(event.start.dateTime).toString()}</p>
 				<p className='event-location'>
 					@{event.summary} | {event.location}
 				</p>
 				{!collapsed && (
-					<>
+					<div className='event-details'>
 						<h3 className='about-heading'>About event:</h3>
 						<a
 							href={event.htmlLink}
@@ -33,7 +31,7 @@ class Event extends Component {
 							Details on Google Calendar
 						</a>
 						<p className='event-description'>{event.description}</p>
-					</>
+					</div>
 				)}
 				<button
 					className='details-button'
