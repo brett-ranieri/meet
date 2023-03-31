@@ -80,16 +80,16 @@ User Story: As a user, I should be able to show/hide the details of an event so 
 
 User Story: As a user, I should be able to specify the number of events I am interested in so that I can see a list containing more or less events.
 
-- Scenario 1: When user hasn’t specified a number, 32 is the default number
+- Scenario 1: When user hasn’t specified a number, 24 is the default number
 
   - Given the user has received a list of all upcoming events matching search criteria entered (if any)
   - When the user has not specified how many events to show
-  - Then the first 32 upcoming events will be displayed.
+  - Then the first 24 upcoming events will be displayed.
 
 - Scenario 2: User can change the number of events they want to see
   - Given the user has received a list of all upcoming events matching search criteria entered (if any)
-  - When the user choses how many events to show (example 50)
-  - Then the matching number of upcoming events (50) will be displayed.
+  - When the user choses ten events to show
+  - Then ten events will be displayed.
 
 ### FEATURE 4: USE THE APP WHEN OFFLINE
 
