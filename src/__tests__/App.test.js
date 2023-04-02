@@ -59,27 +59,32 @@ describe("<App /> integration", () => {
 		const numberOfEvents = AppWrapper.state("numberOfEvents");
 		const selectedIndex = Math.floor(Math.random() * suggestions.length);
 		const selectedCity = suggestions[selectedIndex];
-		console.log("selected ", selectedCity);
+		// console.log("selected ", selectedCity);
 		await CitySearchWrapper.instance().handleItemClicked(selectedCity);
 		const allEvents = await getEvents();
-		console.log("allEvents ", allEvents.length);
+		// console.log("allEvents ", allEvents.length);
 		const eventsToShow = allEvents.filter((event) => event.location === selectedCity);
-		console.log("eventsToShow ", eventsToShow.length);
-		console.log("#of  ", numberOfEvents);
+		// console.log("eventsToShow ", eventsToShow.length);
+		// console.log("#of  ", numberOfEvents);
 		const slicedEventsToShow = eventsToShow.slice(0, numberOfEvents);
-		console.log("slicedEventsToShow ", slicedEventsToShow.length);
-		console.log("events  ", AppWrapper.state("events").length);
+		// console.log("slicedEventsToShow ", slicedEventsToShow.length);
+		// console.log("events  ", AppWrapper.state("events").length);
 		expect(AppWrapper.state("events")).toEqual(slicedEventsToShow);
 		AppWrapper.unmount();
 	});
 
 	test('get a list of all events when user selects "See all cities"', async () => {
 		const AppWrapper = mount(<App />);
+		const numberOfEvents = AppWrapper.state("numberOfEvents");
 		const suggestionItems = AppWrapper.find(CitySearch).find(".suggestions li");
 		await suggestionItems.at(suggestionItems.length - 1).simulate("click");
 		const allEvents = await getEvents();
-		expect(AppWrapper.state("events").length).toEqual(allEvents.length);
-		AppWrapper.unmount();
+		// console.log("all ", allEvents.length);
+		const slicedEvents = allEvents.slice(0, numberOfEvents);
+		// console.log("events ", AppWrapper.state("events").length);
+		// console.log("sliced ", slicedEvents.length);
+		expect(AppWrapper.state("events").length).toEqual(slicedEvents.length);
+		// AppWrapper.unmount();
 	});
 
 	test('App passes "numberOfEvents" as a prop to NumberOfEvents', () => {
