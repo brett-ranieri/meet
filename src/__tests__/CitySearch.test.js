@@ -11,7 +11,7 @@ describe("<CitySearch /> component", () => {
 		CitySearchWrapper = shallow(
 			<CitySearch
 				locations={locations}
-				updateLocation={() => {}}
+				updateEvents={() => {}}
 			/>
 		);
 	});
