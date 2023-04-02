@@ -12,20 +12,20 @@ class App extends Component {
 		events: [],
 		locations: [],
 		selectedLocation: "all",
-		numberOfEvents: 24,
+		numberOfEvents: 20,
 	};
 
 	componentDidMount() {
 		// console.log("mount mock ", mockData);
 		this.mounted = true;
 		getEvents().then((events) => {
-			console.log("mount events", events.length);
+			// console.log("mount events", events.length);
 			if (this.mounted) {
 				const numberOfEvents = this.state.numberOfEvents;
-				console.log("mount #of ", numberOfEvents);
+				// console.log("mount #of ", numberOfEvents);
 				// console.log("slice ", events.slice(0, numberOfEvents));
 				const slicedEvents = events.slice(0, numberOfEvents);
-				console.log("init sliced ", slicedEvents.length);
+				// console.log("init sliced ", slicedEvents.length);
 				this.setState({ events: slicedEvents, locations: extractLocations(events) });
 			}
 		});
@@ -37,33 +37,39 @@ class App extends Component {
 
 	updateLocation = (location) => {
 		getEvents().then((events) => {
-			console.log("loc events ", events.length);
+			// console.log("init loc events ", events.length);
+			const numberOfEvents = this.state.numberOfEvents;
+			// console.log("loc #of ", numberOfEvents);
 			const locationEvents =
 				location === "all" ? events : events.filter((event) => event.location === location);
-			locationEvents.length = this.state.numberOfEvents;
+			// console.log("loc events sorted ", locationEvents.length);
+			const slicedEvents = locationEvents.slice(0, numberOfEvents);
+			// console.log("loc sliced ", slicedEvents.length);
 			this.setState({
-				events: locationEvents,
+				events: slicedEvents,
 				selectedLocation: location,
 			});
 		});
 	};
 
 	updateNumberOfEvents = (eventCount) => {
-		this.setState({ numberOfEvents: eventCount });
-		console.log("eventCount ", eventCount);
-		console.log("selected ", this.state.selectedLocation);
+		// console.log("eventCount ", eventCount);
+		// console.log("selected ", this.state.selectedLocation);
 		getEvents().then((events) => {
+			// console.log("init num events ", events.length);
 			const selectedLocation = this.state.selectedLocation;
+			// console.log("num eventCount ", eventCount);
+			// console.log(selectedLocation);
 			const locationEvents =
 				selectedLocation === "all"
 					? events
 					: events.filter((event) => event.location === selectedLocation);
-			console.log("locationEvents ", locationEvents.length);
-			const limitedEvents = locationEvents.slice(0, eventCount);
-			console.log("events ", limitedEvents.length);
-			console.log("NumberOf ", this.state.numberOfEvents);
+			// console.log("num locationEvents ", locationEvents.length);
+			const slicedEvents = locationEvents.slice(0, eventCount);
+			// console.log("num sliced ", slicedEvents.length);
 			this.setState({
-				events: limitedEvents,
+				events: slicedEvents,
+				numberOfEvents: eventCount,
 			});
 		});
 	};

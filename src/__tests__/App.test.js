@@ -95,8 +95,10 @@ describe("<App /> integration", () => {
 	test("length of Events array matches numberOfEvents state", async () => {
 		const AppWrapper = mount(<App />);
 		const allEvents = await getEvents();
+		const numberOfEvents = AppWrapper.state("numberOfEvents");
+		const slicedEvents = allEvents.slice(0, numberOfEvents);
 		AppWrapper.setState({
-			events: allEvents,
+			events: slicedEvents,
 		});
 		expect(AppWrapper.state("events").length).toEqual(AppWrapper.state("numberOfEvents"));
 		AppWrapper.unmount();

@@ -21,8 +21,8 @@ describe("<NumberOfEvents /> component", () => {
 		expect(NumberOfEventsWrapper.find("input.number-of-events")).toHaveLength(1);
 	});
 
-	test("confirm 24 events displayed by default", () => {
-		expect(NumberOfEventsWrapper.state("query")).toBe(24);
+	test("confirm 20 events displayed by default", () => {
+		expect(NumberOfEventsWrapper.state("query")).toBe(20);
 	});
 
 	test("confirm that number of events input only receives numbers", () => {

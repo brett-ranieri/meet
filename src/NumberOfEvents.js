@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
 	state = {
-		query: 24,
+		query: 20,
 	};
 
 	handleNumberChanged = (event) => {
