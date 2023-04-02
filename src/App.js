@@ -11,15 +11,16 @@ class App extends Component {
 		events: [],
 		locations: [],
 		selectedLocation: "all",
-		numberOfEvents: 24,
+		numberOfEvents: 20,
 	};
 
 	componentDidMount() {
 		this.mounted = true;
 		getEvents().then((events) => {
 			if (this.mounted) {
-				events.length = this.state.numberOfEvents;
-				this.setState({ events, locations: extractLocations(events) });
+				const numberOfEvents = this.state.numberOfEvents;
+				const slicedEvents = events.slice(0, numberOfEvents);
+				this.setState({ events: slicedEvents, locations: extractLocations(events) });
 			}
 		});
 	}
@@ -29,27 +30,27 @@ class App extends Component {
 	}
 
 	updateEvents = (location, eventCount) => {
-		const { selectedLocation } = this.state;
-
 		if (location) {
 			getEvents().then((events) => {
+				const numberOfEvents = this.state.numberOfEvents;
 				const locationEvents =
 					location === "all" ? events : events.filter((event) => event.location === location);
-				locationEvents.length = this.state.numberOfEvents;
+				const slicedEvents = locationEvents.slice(0, numberOfEvents);
 				this.setState({
-					events: locationEvents,
+					events: slicedEvents,
 					selectedLocation: location,
 				});
 			});
 		} else {
 			getEvents().then((events) => {
+				const selectedLocation = this.state.selectedLocation;
 				const locationEvents =
 					selectedLocation === "all"
 						? events
 						: events.filter((event) => event.location === selectedLocation);
-				const limitedEvents = locationEvents.slice(0, eventCount);
+				const slicedEvents = locationEvents.slice(0, eventCount);
 				this.setState({
-					events: limitedEvents,
+					events: slicedEvents,
 					numberOfEvents: eventCount,
 				});
 			});
