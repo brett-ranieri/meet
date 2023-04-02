@@ -12,17 +12,21 @@ class App extends Component {
 		events: [],
 		locations: [],
 		selectedLocation: "all",
-		numberOfEvents: 20,
+		numberOfEvents: 24,
 	};
 
 	componentDidMount() {
 		// console.log("mount mock ", mockData);
 		this.mounted = true;
 		getEvents().then((events) => {
-			// console.log("mount events", events);
+			console.log("mount events", events.length);
 			if (this.mounted) {
-				// events.length = this.state.numberOfEvents;
-				this.setState({ events, locations: extractLocations(events) });
+				const numberOfEvents = this.state.numberOfEvents;
+				console.log("mount #of ", numberOfEvents);
+				// console.log("slice ", events.slice(0, numberOfEvents));
+				const slicedEvents = events.slice(0, numberOfEvents);
+				console.log("init sliced ", slicedEvents.length);
+				this.setState({ events: slicedEvents, locations: extractLocations(events) });
 			}
 		});
 	}
@@ -33,6 +37,7 @@ class App extends Component {
 
 	updateLocation = (location) => {
 		getEvents().then((events) => {
+			console.log("loc events ", events.length);
 			const locationEvents =
 				location === "all" ? events : events.filter((event) => event.location === location);
 			locationEvents.length = this.state.numberOfEvents;
@@ -44,18 +49,21 @@ class App extends Component {
 	};
 
 	updateNumberOfEvents = (eventCount) => {
-		console.log("I updated");
+		this.setState({ numberOfEvents: eventCount });
+		console.log("eventCount ", eventCount);
+		console.log("selected ", this.state.selectedLocation);
 		getEvents().then((events) => {
 			const selectedLocation = this.state.selectedLocation;
 			const locationEvents =
 				selectedLocation === "all"
 					? events
 					: events.filter((event) => event.location === selectedLocation);
+			console.log("locationEvents ", locationEvents.length);
 			const limitedEvents = locationEvents.slice(0, eventCount);
 			console.log("events ", limitedEvents.length);
+			console.log("NumberOf ", this.state.numberOfEvents);
 			this.setState({
 				events: limitedEvents,
-				numberOfEvents: eventCount,
 			});
 		});
 	};
