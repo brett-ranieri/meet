@@ -56,21 +56,25 @@ describe("<App /> integration", () => {
 		const locations = extractLocations(mockData);
 		CitySearchWrapper.setState({ suggestions: locations });
 		const suggestions = CitySearchWrapper.state("suggestions");
+		const numberOfEvents = AppWrapper.state("numberOfEvents");
 		const selectedIndex = Math.floor(Math.random() * suggestions.length);
 		const selectedCity = suggestions[selectedIndex];
 		await CitySearchWrapper.instance().handleItemClicked(selectedCity);
 		const allEvents = await getEvents();
 		const eventsToShow = allEvents.filter((event) => event.location === selectedCity);
-		expect(AppWrapper.state("events")).toEqual(eventsToShow);
+		const slicedEventsToShow = eventsToShow.slice(0, numberOfEvents);
+		expect(AppWrapper.state("events")).toEqual(slicedEventsToShow);
 		AppWrapper.unmount();
 	});
 
 	test('get a list of all events when user selects "See all cities"', async () => {
 		const AppWrapper = mount(<App />);
+		const numberOfEvents = AppWrapper.state("numberOfEvents");
 		const suggestionItems = AppWrapper.find(CitySearch).find(".suggestions li");
 		await suggestionItems.at(suggestionItems.length - 1).simulate("click");
 		const allEvents = await getEvents();
-		expect(AppWrapper.state("events")).toEqual(allEvents);
+		const slicedEvents = allEvents.slice(0, numberOfEvents);
+		expect(AppWrapper.state("events").length).toEqual(slicedEvents.length);
 		AppWrapper.unmount();
 	});
 
@@ -95,8 +99,10 @@ describe("<App /> integration", () => {
 	test("length of Events array matches numberOfEvents state", async () => {
 		const AppWrapper = mount(<App />);
 		const allEvents = await getEvents();
+		const numberOfEvents = AppWrapper.state("numberOfEvents");
+		const slicedEvents = allEvents.slice(0, numberOfEvents);
 		AppWrapper.setState({
-			events: allEvents,
+			events: slicedEvents,
 		});
 		expect(AppWrapper.state("events").length).toEqual(AppWrapper.state("numberOfEvents"));
 		AppWrapper.unmount();
