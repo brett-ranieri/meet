@@ -8,7 +8,7 @@ describe("<NumberOfEvents /> component", () => {
 		NumberOfEventsWrapper = shallow(
 			<NumberOfEvents
 				// updateNumberOfEvents={() => {}}
-				updateEvents={() => {}}
+				updateNumberOfEvents={() => {}}
 			/>
 		);
 	});
