@@ -5,7 +5,7 @@ import App from "../App";
 const feature = loadFeature("./src/features/specifyNumberOfEvents.feature");
 
 defineFeature(feature, (test) => {
-	test("When user hasn’t specified a number, twenty four is the default number", ({
+	test("When user hasn’t specified a number, twenty is the default number", ({
 		given,
 		when,
 		then,
@@ -20,9 +20,9 @@ defineFeature(feature, (test) => {
 
 		when("the user has not specified how many events to show", () => {});
 
-		then("the first twenty four upcoming events will be displayed.", () => {
+		then("the first twenty upcoming events will be displayed.", () => {
 			AppWrapper.update();
-			expect(AppWrapper.state("numberOfEvents")).toEqual(24);
+			expect(AppWrapper.state("numberOfEvents")).toEqual(20);
 		});
 	});
 	test("User can change the number of events they want to see", ({ given, when, then }) => {
@@ -32,7 +32,7 @@ defineFeature(feature, (test) => {
 			() => {
 				AppWrapper = mount(<App />);
 				AppWrapper.update();
-				expect(AppWrapper.state("numberOfEvents")).toEqual(24);
+				expect(AppWrapper.state("numberOfEvents")).toEqual(20);
 			}
 		);
 
