@@ -62,7 +62,7 @@ User Story: As a user, I should be able to filter the list of events by city so 
 User Story: As a user, I should be able to show/hide the details of an event so that I can see more or less information about an event.
 
 - Scenario 1: An event element is collapsed by default
-  - Given the main page has been opened and a list of events has been displayed
+  - Given the main page has been opened
   - When the user has not selected any specific event
   - Then no event details will be visible to the user
 - Scenario 2: User can expand an event to see its details
@@ -80,16 +80,16 @@ User Story: As a user, I should be able to show/hide the details of an event so 
 
 User Story: As a user, I should be able to specify the number of events I am interested in so that I can see a list containing more or less events.
 
-- Scenario 1: When user hasn’t specified a number, 32 is the default number
+- Scenario 1: When user hasn’t specified a number, 24 is the default number
 
   - Given the user has received a list of all upcoming events matching search criteria entered (if any)
   - When the user has not specified how many events to show
-  - Then the first 32 upcoming events will be displayed.
+  - Then the first 24 upcoming events will be displayed.
 
 - Scenario 2: User can change the number of events they want to see
   - Given the user has received a list of all upcoming events matching search criteria entered (if any)
-  - When the user choses how many events to show (example 50)
-  - Then the matching number of upcoming events (50) will be displayed.
+  - When the user choses ten events to show
+  - Then ten events will be displayed.
 
 ### FEATURE 4: USE THE APP WHEN OFFLINE
 
