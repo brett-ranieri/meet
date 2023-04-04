@@ -16,17 +16,13 @@ class App extends Component {
 
 	componentDidMount() {
 		this.mounted = true;
-		getEvents()
-			.then((events) => {
-				if (this.mounted) {
-					const numberOfEvents = this.state.numberOfEvents;
-					const slicedEvents = events.slice(0, numberOfEvents);
-					this.setState({ events: slicedEvents, locations: extractLocations(events) });
-				}
-			})
-			.catch((error) => {
-				console.log("mount ", error);
-			});
+		getEvents().then((events) => {
+			if (this.mounted) {
+				const numberOfEvents = this.state.numberOfEvents;
+				const slicedEvents = events.slice(0, numberOfEvents);
+				this.setState({ events: slicedEvents, locations: extractLocations(events) });
+			}
+		});
 	}
 
 	componentWillUnmount() {
@@ -43,8 +39,6 @@ class App extends Component {
 				this.setState({
 					events: slicedEvents,
 					selectedLocation: location,
-				}).catch((error) => {
-					console.log("location ", error);
 				});
 			});
 		} else {
@@ -58,8 +52,6 @@ class App extends Component {
 				this.setState({
 					events: slicedEvents,
 					numberOfEvents: eventCount,
-				}).catch((error) => {
-					console.log("# ", error);
 				});
 			});
 		}
