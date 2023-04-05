@@ -53,20 +53,39 @@ input[type="number"] {
 /* .CitySearch,
 .NumberOfEvents {
 	display: flex;
-	flex-direction: column;
-	flex-basis: 300px;
+	/* flex-direction: column;
+	flex-basis: 300px; */
 	max-width: 300px;
-	margin: auto;
-	position: relative;
-} */
+	float: left;
+	/* margin: auto; */
+	position: absolute;
+	margin-bottom: 35px;
+	margin-top: 50px;
+}
+
+.NumberOfEvents {
+	display: flex;
+	max-width: 300px;
+	/* margin: 45px auto;
+	text-align: center; */
+	float: right;
+	margin-bottom: 35px;
+	margin-top: 50px;
+}
+
+.EventList {
+	margin-top: 200px;
+}
 
 .suggestions {
-	width: 250px;
+	min-width: 200px;
+	max-width: 300px;
+	margin-top: 50px;
 	position: absolute;
-	z-index: 2;
-	align-self: center;
-	margin: 0;
-	top: 43px;
+	/* z-index: 2; */
+	float: left;
+	/* margin: 0;
+	top: 43px; */
 	font-size: 14px;
 	box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -125,12 +144,6 @@ input[type="number"] {
 .description {
 	overflow-x: hidden;
 }
-/* 
-.number-of-events {
-	width: 200px;
-	margin: 45px auto;
-	text-align: center;
-} */
 
 .button-wrapper {
 	display: grid;
