@@ -29,6 +29,7 @@ class CitySearch extends Component {
 	render() {
 		return (
 			<div className='CitySearch'>
+				<label for='city'>Pick a City:</label>
 				<input
 					type='text'
 					placeholder='Search for a city'
