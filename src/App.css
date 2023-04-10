@@ -20,7 +20,9 @@
 
 ul {
 	padding: 0;
+	/* margin: 30px; */
 	list-style: none;
+	/* max-height: 100px; */
 }
 
 p {
@@ -31,6 +33,11 @@ p {
 	display: none;
 }
 .showSuggestions {
+	display: block;
+}
+
+label,
+input {
 	display: block;
 }
 
@@ -46,46 +53,58 @@ input[type="number"] {
 	height: 38px;
 }
 
-.city {
-	width: 250px;
+.city,
+.number-of-events {
+	max-width: 250px;
 }
 
-/* .CitySearch,
+.city_label,
+.event-label {
+	margin-bottom: 1em;
+	font-size: 2em;
+}
+
+.CitySearch,
 .NumberOfEvents {
 	display: flex;
-	/* flex-direction: column;
-	flex-basis: 300px; */
+	flex-direction: column;
+	flex-basis: 300px;
 	max-width: 300px;
-	float: left;
+	/* float: left; */
 	/* margin: auto; */
-	position: absolute;
-	margin-bottom: 35px;
-	margin-top: 50px;
+	text-align: center;
+	align-content: center;
+	/* position: absolute; */
+	/* margin-bottom: 35px; */
+	/* margin-top: 50px; */
 }
 
-.NumberOfEvents {
+.app_inputs {
 	display: flex;
-	max-width: 300px;
-	/* margin: 45px auto;
-	text-align: center; */
-	float: right;
-	margin-bottom: 35px;
-	margin-top: 50px;
+	justify-content: space-evenly;
+	margin-top: 3em;
+	margin-bottom: 4rem;
 }
 
 .EventList {
-	margin-top: 200px;
+	/* margin-top: 10em; */
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
 }
 
 .suggestions {
 	min-width: 200px;
 	max-width: 300px;
-	margin-top: 50px;
-	position: absolute;
+	max-height: 12em;
+	/* margin-top: 50px; */
+	position: relative;
+	overflow: scroll;
 	/* z-index: 2; */
-	float: left;
+	/* float: left; */
 	/* margin: 0;
 	top: 43px; */
+	border: 5px solid var(--yellow);
 	font-size: 14px;
 	box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -93,7 +112,8 @@ input[type="number"] {
 .suggestions > li {
 	text-align: left;
 	padding: 8px 6px 8px 10px;
-	background-color: #eee;
+	background-color: var(--lite-pink);
+	color: white;
 	cursor: default;
 }
 
@@ -107,6 +127,9 @@ input[type="number"] {
 }
 
 .event {
+	min-width: 15em;
+	max-width: 20em;
+	margin: 1em;
 	padding: 10px 10px 35px;
 	margin-bottom: 10px;
 	text-align: left;
@@ -116,7 +139,16 @@ input[type="number"] {
 	position: relative;
 }
 
-.details-btn {
+.event-title {
+	margin-bottom: 6px;
+	margin-top: 10px;
+}
+.event-location {
+	margin-bottom: 6px;
+	padding-bottom: 10px;
+}
+
+.details-button {
 	position: absolute;
 	right: 5px;
 	bottom: 5px;
@@ -124,6 +156,11 @@ input[type="number"] {
 	border-radius: 4px;
 	outline: none;
 	cursor: pointer;
+	background-color: var(--yellow);
+	color: var(--blue);
+	border-color: #978e0d;
+	margin-bottom: 10px;
+	margin-top: 6px;
 }
 
 .name {
@@ -154,7 +191,7 @@ input[type="number"] {
 }
 
 .Alert {
-	position: fixed;
+	position: relative;
 	top: 20px;
 }
 
