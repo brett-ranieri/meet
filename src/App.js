@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.scss";
 import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
+import { Col, Row } from "react-bootstrap";
 
 class App extends Component {
 	state = {
@@ -60,16 +61,30 @@ class App extends Component {
 	render() {
 		return (
 			<div className='App'>
-				<div className='app_inputs'>
-					<CitySearch
-						locations={this.state.locations}
-						updateEvents={this.updateEvents}
-					/>
-					<NumberOfEvents
-						numberOfEvents={this.state.numberOfEvents}
-						updateEvents={this.updateEvents}
-					/>
-				</div>
+				<h1>MEET APP</h1>
+				<Row className='justify-content-center mb-3'>
+					<Col
+						xs='auto'
+						sm={6}
+						md={4}
+						className=''
+					>
+						<CitySearch
+							locations={this.state.locations}
+							updateEvents={this.updateEvents}
+						/>
+					</Col>
+					<Col
+						xs='auto'
+						sm={6}
+						md={4}
+					>
+						<NumberOfEvents
+							numberOfEvents={this.state.numberOfEvents}
+							updateEvents={this.updateEvents}
+						/>
+					</Col>
+				</Row>
 				<div className='app_event_list'>
 					<EventList events={this.state.events} />
 				</div>

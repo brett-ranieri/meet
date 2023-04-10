@@ -58,6 +58,7 @@ class Event extends Component {
 						<p className='event-description'>{event.description}</p>
 					</div>
 				)}
+				<br />
 				<button
 					className='details-button'
 					onClick={() => this.toggleCollapsed()}

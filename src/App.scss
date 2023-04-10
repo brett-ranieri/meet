@@ -1,4 +1,6 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 :root {
 	--pink: #ff1d58;
 	--lite-pink: #f75990;
@@ -8,7 +10,6 @@
 }
 
 .App {
-	text-align: left;
 	color: var(--yellow);
 	padding: 2% 5%;
 	background-color: var(--pink);
@@ -19,10 +20,15 @@
 }
 
 ul {
-	padding: 0;
-	/* margin: 30px; */
 	list-style: none;
-	/* max-height: 100px; */
+}
+
+h1 {
+	text-align: center;
+	font-size: 3em;
+	text-shadow: 3px 3px 10px black;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 p {
@@ -38,73 +44,52 @@ p {
 
 label,
 input {
-	display: block;
+	justify-self: center;
+}
+
+input {
+	margin-bottom: 0.5em;
 }
 
 input[type="text"],
 input[type="number"] {
-	padding: 8px 6px 8px 10px;
 	border-radius: 4px;
 	outline: none;
 	border: 1px solid #ccc;
 	font-size: 14px;
 	line-height: 20px;
 	align-self: center;
+	justify-self: center;
 	height: 38px;
 }
 
 .city,
 .number-of-events {
-	max-width: 250px;
+	align-content: center;
+	text-align: center;
 }
 
 .city_label,
 .event-label {
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 	font-size: 2em;
 }
 
 .CitySearch,
 .NumberOfEvents {
-	display: flex;
-	flex-direction: column;
-	flex-basis: 300px;
-	max-width: 300px;
-	/* float: left; */
-	/* margin: auto; */
+	width: 300px;
+	margin: auto;
 	text-align: center;
 	align-content: center;
-	/* position: absolute; */
-	/* margin-bottom: 35px; */
-	/* margin-top: 50px; */
-}
-
-.app_inputs {
-	display: flex;
-	justify-content: space-evenly;
-	margin-top: 3em;
-	margin-bottom: 4rem;
-}
-
-.EventList {
-	/* margin-top: 10em; */
-	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
 }
 
 .suggestions {
 	min-width: 200px;
 	max-width: 300px;
 	max-height: 12em;
-	/* margin-top: 50px; */
 	position: relative;
 	overflow: scroll;
-	/* z-index: 2; */
-	/* float: left; */
-	/* margin: 0;
-	top: 43px; */
-	border: 5px solid var(--yellow);
+	border: 2px solid var(--yellow);
 	font-size: 14px;
 	box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -127,8 +112,6 @@ input[type="number"] {
 }
 
 .event {
-	min-width: 15em;
-	max-width: 20em;
 	margin: 1em;
 	padding: 10px 10px 35px;
 	margin-bottom: 10px;
@@ -142,10 +125,6 @@ input[type="number"] {
 .event-title {
 	margin-bottom: 6px;
 	margin-top: 10px;
-}
-.event-location {
-	margin-bottom: 6px;
-	padding-bottom: 10px;
 }
 
 .details-button {
@@ -161,6 +140,7 @@ input[type="number"] {
 	border-color: #978e0d;
 	margin-bottom: 10px;
 	margin-top: 6px;
+	margin-right: 5px;
 }
 
 .name {
@@ -259,54 +239,3 @@ input[type="number"] {
 	letter-spacing: 0.2px;
 	font-family: "Roboto";
 }
-
-@media only screen and (min-width: 992px) {
-	.data-vis-wrapper {
-		flex-direction: row;
-	}
-	.data-vis-wrapper .recharts-responsive-container {
-		flex-basis: 50%;
-		max-width: 50%;
-		min-width: auto;
-		margin: 0 auto;
-	}
-}
-
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

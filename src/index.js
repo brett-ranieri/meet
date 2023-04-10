@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom"; //IMPORTANT: needed to remove /client to compile successfully with version 17 of React
 import "./index.css";
+import "./App.scss";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
