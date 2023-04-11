@@ -6,6 +6,7 @@ import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import { Col, Row } from "react-bootstrap";
+import { WarningAlert } from "./Alert";
 
 class App extends Component {
 	state = {
@@ -13,6 +14,7 @@ class App extends Component {
 		locations: [],
 		selectedLocation: "all",
 		numberOfEvents: 20,
+		warningText: "",
 	};
 
 	componentDidMount() {
@@ -56,12 +58,23 @@ class App extends Component {
 				});
 			});
 		}
+
+		if (!navigator.onLine) {
+			this.setState({
+				warningText:
+					"Looks like you're not connected to the internet. Displayed events have been loaded from local storage.",
+			});
+		} else {
+			this.setState({ warningText: "" });
+		}
 	};
 
 	render() {
 		return (
 			<div className='App'>
+				<WarningAlert text={this.state.warningText} />
 				<h1>MEET APP</h1>
+
 				<Row className='justify-content-center mb-3'>
 					<Col
 						xs='auto'
