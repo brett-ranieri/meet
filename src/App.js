@@ -7,6 +7,15 @@ import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import { Col, Row } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
+import {
+	ScatterChart,
+	Scatter,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	ResponsiveContainer,
+} from "recharts";
 
 class App extends Component {
 	state = {
@@ -31,6 +40,17 @@ class App extends Component {
 	componentWillUnmount() {
 		this.mounted = false;
 	}
+
+	getData = () => {
+		const { locations, events } = this.state;
+		const data = locations.map((location) => {
+			const number = events.filter((event) => event.location === location).length;
+			const city = location.split(", ").shift();
+			return { city, number };
+		});
+		console.log("data ", data);
+		return data;
+	};
 
 	updateEvents = (location, eventCount) => {
 		if (location) {
@@ -74,7 +94,6 @@ class App extends Component {
 			<div className='App'>
 				<WarningAlert text={this.state.warningText} />
 				<h1>MEET APP</h1>
-
 				<Row className='justify-content-center mb-3'>
 					<Col
 						xs='auto'
@@ -99,6 +118,45 @@ class App extends Component {
 					</Col>
 				</Row>
 				<div className='app_event_list'>
+					<h4>Events in Each City</h4>
+					<div className='chart'>
+						<ResponsiveContainer height={250}>
+							<ScatterChart
+								margin={{
+									top: 20,
+									right: 20,
+									bottom: 10,
+									left: 0,
+								}}
+							>
+								<CartesianGrid strokeDasharray='3 3' />
+								<XAxis
+									dataKey='city'
+									type='category'
+									name='City'
+									allowDuplicatedCategory={false}
+								/>
+								<YAxis
+									dataKey='number'
+									type='number'
+									name='Number of Events'
+								/>
+								<Tooltip cursor={{ strokeDasharray: "3 3" }} />
+								{/* <ZAxis
+							dataKey='z'
+							type='number'
+							range={[64, 144]}
+							name='score'
+							unit='km'
+						/> */}
+								<Scatter
+									data={this.getData()}
+									fill='#8884d8'
+								/>
+							</ScatterChart>
+						</ResponsiveContainer>
+					</div>
+
 					<EventList events={this.state.events} />
 				</div>
 			</div>
