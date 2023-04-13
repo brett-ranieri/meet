@@ -89,6 +89,18 @@ class App extends Component {
 		}
 	};
 
+	CustomToolTip = ({ active, payload }) => {
+		if (active && payload && payload.length) {
+			return (
+				<div className='custom-tooltip'>
+					<p className='tooltip_city'>{`${payload[0].value}`}</p>
+					<p className='tooltip_number'>{`${payload[1].value}`}</p>
+				</div>
+			);
+		}
+		return null;
+	};
+
 	render() {
 		return (
 			<div className='App'>
@@ -141,7 +153,10 @@ class App extends Component {
 									type='number'
 									name='Number of Events'
 								/>
-								<Tooltip cursor={{ strokeDasharray: "3 3" }} />
+								<Tooltip
+									content={this.CustomToolTip}
+									cursor={{ strokeDasharray: "3 3" }}
+								/>
 								{/* <ZAxis
 							dataKey='z'
 							type='number'
@@ -151,7 +166,7 @@ class App extends Component {
 						/> */}
 								<Scatter
 									data={this.getData()}
-									fill='#8884d8'
+									fill='#fff685'
 								/>
 							</ScatterChart>
 						</ResponsiveContainer>
