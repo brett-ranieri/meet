@@ -4,6 +4,7 @@ import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
+import EventGenre from "./EventGenre";
 import { getEvents, extractLocations } from "./api";
 import { Col, Row } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
@@ -130,8 +131,9 @@ class App extends Component {
 					</Col>
 				</Row>
 				<div className='app_event_list'>
-					<h4>Events in Each City</h4>
-					<div className='chart'>
+					<div className='data-vis-wrapper'>
+						<EventGenre events={this.state.events} />
+						<h4>Events in Each City</h4>
 						<ResponsiveContainer height={250}>
 							<ScatterChart
 								margin={{
