@@ -25,7 +25,7 @@ const EventGenre = ({ events }) => {
 	// };
 
 	return (
-		<div>
+		<div className='events-by-genre'>
 			<h4>Events by Genre</h4>
 			<ResponsiveContainer height={250}>
 				<PieChart>

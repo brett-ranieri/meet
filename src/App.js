@@ -131,48 +131,64 @@ class App extends Component {
 					</Col>
 				</Row>
 				<div className='app_event_list'>
-					<div className='data-vis-wrapper'>
-						<EventGenre events={this.state.events} />
-						<h4>Events in Each City</h4>
-						<ResponsiveContainer height={250}>
-							<ScatterChart
-								margin={{
-									top: 20,
-									right: 20,
-									bottom: 10,
-									left: 0,
-								}}
-							>
-								<CartesianGrid strokeDasharray='3 3' />
-								<XAxis
-									dataKey='city'
-									type='category'
-									name='City'
-									allowDuplicatedCategory={false}
-								/>
-								<YAxis
-									dataKey='number'
-									type='number'
-									name='Number of Events'
-								/>
-								<Tooltip
-									content={this.CustomToolTip}
-									cursor={{ strokeDasharray: "3 3" }}
-								/>
-								{/* <ZAxis
+					<Row className='justify-content-center'>
+						{/* <div className='data-vis-wrapper'> */}
+						<Col
+							xs='auto'
+							sm={3}
+							md={4}
+						>
+							<EventGenre events={this.state.events} />
+						</Col>
+						<Col
+							xs='auto'
+							sm={9}
+							md={8}
+						>
+							<div className='events-by-city'>
+								<h4 className='events-by-city-label'>Events in Each City</h4>
+								<ResponsiveContainer height={250}>
+									<ScatterChart
+										margin={{
+											top: 20,
+											right: 20,
+											bottom: 10,
+											left: 0,
+										}}
+									>
+										<CartesianGrid strokeDasharray='3 3' />
+										<XAxis
+											dataKey='city'
+											type='category'
+											name='City'
+											allowDuplicatedCategory={false}
+										/>
+										<YAxis
+											dataKey='number'
+											type='number'
+											name='Number of Events'
+										/>
+										<Tooltip
+											content={this.CustomToolTip}
+											cursor={{ strokeDasharray: "3 3" }}
+										/>
+										{/* <ZAxis
 							dataKey='z'
 							type='number'
 							range={[64, 144]}
 							name='score'
 							unit='km'
 						/> */}
-								<Scatter
-									data={this.getData()}
-									fill='#fff685'
-								/>
-							</ScatterChart>
-						</ResponsiveContainer>
-					</div>
+										<Scatter
+											data={this.getData()}
+											fill='#fff685'
+										/>
+									</ScatterChart>
+								</ResponsiveContainer>
+							</div>
+						</Col>
+						{/* </div> */}
+					</Row>
 
 					<EventList events={this.state.events} />
 				</div>

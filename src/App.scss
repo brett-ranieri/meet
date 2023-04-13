@@ -111,6 +111,16 @@ input[type="number"] {
 	background-color: #bcdcdb;
 }
 
+.events-by-city,
+.events-by-genre {
+	display: flex;
+	flex-direction: column;
+}
+
+h4 {
+	display: inline-block;
+	text-align: center;
+}
 .custom-tooltip {
 	display: inline-block;
 	margin-left: 0.5em;
@@ -184,7 +194,8 @@ input[type="number"] {
 .data-vis-wrapper {
 	display: flex;
 	align-items: center;
-	flex-direction: column;
+	justify-content: center;
+	flex-direction: row;
 }
 .data-vis-wrapper .recharts-responsive-container {
 	min-width: 100%;
