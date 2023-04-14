@@ -3,6 +3,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 const EventGenre = ({ events }) => {
 	const [eventGenreData, setEventGenreData] = useState([]);
+	const colors = ["#0049b7", "#00ddff", "#fff685", "#f75990", "#32cd32"];
 
 	useEffect(() => {
 		const getData = () => {
@@ -40,7 +41,10 @@ const EventGenre = ({ events }) => {
 						label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
 					>
 						{eventGenreData.map((entry, index) => (
-							<Cell key={`cell-${index}`} />
+							<Cell
+								key={`cell-${index}`}
+								fill={colors[index]}
+							/>
 						))}
 					</Pie>
 				</PieChart>
