@@ -21,6 +21,17 @@ class NumberOfEvents extends Component {
 			});
 			this.props.updateEvents(null, value);
 		}
+
+		// const element = document.querySelector("select");
+		// element.addEventListener("mousedown", function () {
+		// 	this.size = 10;
+		// });
+		// element.addEventListener("change", function () {
+		// 	this.blur();
+		// });
+		// element.addEventListener("blur", function () {
+		// 	this.size = 0;
+		// });
 	};
 
 	render() {
@@ -32,13 +43,34 @@ class NumberOfEvents extends Component {
 				>
 					Pick a Number:
 				</label>
-				<input
+				<select
 					name='eventNumber'
 					className='number-of-events'
 					type='number'
 					value={this.state.query}
 					onChange={this.handleNumberChanged}
-				></input>
+				>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+				</select>
 				<ErrorAlert text={this.state.errorText} />
 			</div>
 		);
