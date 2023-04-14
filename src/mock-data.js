@@ -93,7 +93,7 @@ const mockData = [
 		summary: "Learn JavaScript",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-		location: "London, UK",
+		location: "Bangkok, Thailand",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -134,7 +134,7 @@ const mockData = [
 		summary: "React is Fun",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-		location: "Berlin, Germany",
+		location: "Cape Town, South Africa",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -172,10 +172,10 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA1MjNUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "Node",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-		location: "London, UK",
+		location: "New York, NY",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -216,7 +216,7 @@ const mockData = [
 		summary: "React is Fun",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-		location: "Berlin, Germany",
+		location: "Mumbai, Maharashtra, India",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -254,10 +254,10 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA1MjZUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "Node",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-		location: "London, UK",
+		location: "Amsterdam, Netherlands",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -298,7 +298,7 @@ const mockData = [
 		summary: "React is Fun",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-		location: "Berlin, Germany",
+		location: "Dubai - United Arab Emirates",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -339,7 +339,7 @@ const mockData = [
 		summary: "Learn JavaScript",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-		location: "London, UK",
+		location: "Toronto, ON, Canada",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -377,10 +377,10 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA1MjlUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "jQuery",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-		location: "Berlin, Germany",
+		location: "Santiago, Santiago Metropolitan Region, Chile",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -418,10 +418,10 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA1MzBUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "jQuery",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-		location: "London, UK",
+		location: "Tokyo, Japan",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -459,10 +459,10 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA2MDFUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "jQuery",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-		location: "Berlin, Germany",
+		location: "Nairobi, Kenya",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -500,7 +500,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MDJUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "jQuery",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
 		location: "Manchester, UK",
@@ -544,7 +544,7 @@ const mockData = [
 		summary: "React is Fun",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
-		location: "Berlin, Germany",
+		location: "Sydney NSW, Australia",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -585,7 +585,7 @@ const mockData = [
 		summary: "Learn JavaScript",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
-		location: "London, UK",
+		location: "Moscow, Russia",
 		creator: {
 			email: "fullstackwebdev@careerfoundry.com",
 			self: true,
@@ -664,7 +664,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MDZUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "AngularJS",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
 		location: "London, UK",
@@ -705,7 +705,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA2MDhUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "AngularJS",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
 		location: "Berlin, Germany",
@@ -869,7 +869,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA2MTJUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "AngularJS",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
 		location: "Berlin, Germany",
@@ -992,7 +992,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MTZUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "Node",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
 		location: "London, UK",
@@ -1197,7 +1197,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA2MjJUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "AngularJS",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
 		location: "Berlin, Germany",
@@ -1238,7 +1238,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MjNUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "AngularJS",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
 		location: "London, UK",
@@ -1484,7 +1484,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA2MTJUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "AngularJS",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
 		location: "Berlin, Germany",
@@ -1525,7 +1525,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MTNUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "Node",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
 		location: "London, UK",
@@ -1648,7 +1648,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=M3F0ZDZ1c2NxNHRzaTZnYzdubW10cHFsY3RfMjAyMDA2MTdUMTIwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:14:30.000Z",
 		updated: "2020-05-27T11:45:37.792Z",
-		summary: "React is Fun",
+		summary: "jQuery",
 		description:
 			"Love HTML, CSS, and JS? Want to become a cool front-end developer? \n\nReact is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nJoin us in our free React training sessions and give your career a new direction. ",
 		location: "Berlin, Germany",
@@ -1689,7 +1689,7 @@ const mockData = [
 			"https://www.google.com/calendar/event?eid=NGVhaHM5Z2hraHJ2a2xkNzJob2d1OXBoM2VfMjAyMDA2MThUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
 		created: "2020-05-19T19:17:46.000Z",
 		updated: "2020-05-27T12:01:32.356Z",
-		summary: "Learn JavaScript",
+		summary: "jQuery",
 		description:
 			"Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
 		location: "London, UK",

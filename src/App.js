@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import "./App.scss";
-import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
+import EventGenre from "./EventGenre";
 import { getEvents, extractLocations } from "./api";
 import { Col, Row } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
+import {
+	ScatterChart,
+	Scatter,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	ResponsiveContainer,
+} from "recharts";
 
 class App extends Component {
 	state = {
@@ -31,6 +40,17 @@ class App extends Component {
 	componentWillUnmount() {
 		this.mounted = false;
 	}
+
+	getData = () => {
+		const { locations, events } = this.state;
+		const data = locations.map((location) => {
+			const number = events.filter((event) => event.location === location).length;
+			const city = location.split(", ").shift();
+			return { city, number };
+		});
+		console.log("data ", data);
+		return data;
+	};
 
 	updateEvents = (location, eventCount) => {
 		if (location) {
@@ -69,18 +89,30 @@ class App extends Component {
 		}
 	};
 
+	CustomToolTip = ({ active, payload }) => {
+		if (active && payload && payload.length) {
+			return (
+				<div className='custom-tooltip'>
+					<p className='tooltip_city'>{`${payload[0].value}`}</p>
+					<p className='tooltip_number'>{`${payload[1].value}`}</p>
+				</div>
+			);
+		}
+		return null;
+	};
+
 	render() {
 		return (
 			<div className='App'>
 				<WarningAlert text={this.state.warningText} />
 				<h1>MEET APP</h1>
-
 				<Row className='justify-content-center mb-3'>
 					<Col
 						xs='auto'
-						sm={6}
-						md={4}
-						className=''
+						sm='auto'
+						md='auto'
+						lg='auto'
+						xl='auto'
 					>
 						<CitySearch
 							locations={this.state.locations}
@@ -89,8 +121,10 @@ class App extends Component {
 					</Col>
 					<Col
 						xs='auto'
-						sm={6}
-						md={4}
+						sm='auto'
+						md='auto'
+						lg='auto'
+						xl='auto'
 					>
 						<NumberOfEvents
 							numberOfEvents={this.state.numberOfEvents}
@@ -99,6 +133,58 @@ class App extends Component {
 					</Col>
 				</Row>
 				<div className='app_event_list'>
+					<Row className='justify-content-center'>
+						<Col
+							xs='auto'
+							sm='auto'
+							md='auto'
+						>
+							<EventGenre events={this.state.events} />
+						</Col>
+					</Row>
+					<Row className='justify-content-center'>
+						<Col
+							xs='auto'
+							sm={12}
+							md={12}
+						>
+							<div className='events-by-city'>
+								<h4 className='events-by-city-label'>Events in Each City</h4>
+								<ResponsiveContainer height={250}>
+									<ScatterChart
+										margin={{
+											top: 20,
+											right: 20,
+											bottom: 10,
+											left: 0,
+										}}
+									>
+										<CartesianGrid strokeDasharray='3 3' />
+										<XAxis
+											dataKey='city'
+											type='category'
+											name='City'
+											allowDuplicatedCategory={false}
+										/>
+										<YAxis
+											dataKey='number'
+											type='number'
+											name='Number of Events'
+										/>
+										<Tooltip
+											content={this.CustomToolTip}
+											cursor={{ strokeDasharray: "3 3" }}
+										/>
+										<Scatter
+											data={this.getData()}
+											fill='#fff685'
+										/>
+									</ScatterChart>
+								</ResponsiveContainer>
+							</div>
+						</Col>
+					</Row>
+
 					<EventList events={this.state.events} />
 				</div>
 			</div>

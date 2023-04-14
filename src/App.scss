@@ -2,25 +2,81 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 :root {
-	--pink: #ff1d58;
-	--lite-pink: #f75990;
-	--yellow: #fff685;
-	--lite-blue: #00ddff;
-	--blue: #0049b7;
+	--primary: #ff1d58;
+	--lite-primary: #f75990;
+	--highlight: #fff685;
+	--lite-secondary: #00ddff;
+	--secondary: #0049b7;
 }
 
 .App {
-	color: var(--yellow);
+	color: var(--highlight);
 	padding: 2% 5%;
-	background-color: var(--pink);
+	background-color: var(--primary);
 }
 
 .App * {
 	box-sizing: border-box;
 }
 
-ul {
-	list-style: none;
+#nprogress .bar {
+	background: --highlight;
+	position: fixed;
+	z-index: 1031;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 15px;
+}
+
+#nprogress .spinner {
+	display: block;
+	position: fixed;
+	z-index: 1031;
+	top: 15px;
+	right: 15px;
+}
+
+#nprogress .spinner-icon {
+	width: 30px;
+	height: 30px;
+	box-sizing: border-box;
+
+	border: solid 2px transparent;
+	border-top-color: var(--highlight);
+	border-left-color: var(--highlight);
+	border-radius: 50%;
+
+	-webkit-animation: nprogress-spinner 400ms linear infinite;
+	animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+	overflow: hidden;
+	position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+	position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes nprogress-spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 h1 {
@@ -28,7 +84,7 @@ h1 {
 	font-size: 3em;
 	text-shadow: 3px 3px 10px black;
 	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 
 p {
@@ -49,6 +105,7 @@ input {
 
 input {
 	margin-bottom: 0.5em;
+	box-shadow: 10px 10px 16px -12px #141303;
 }
 
 input[type="text"],
@@ -73,6 +130,7 @@ input[type="number"] {
 .event-label {
 	margin-bottom: 0.5em;
 	font-size: 2em;
+	text-shadow: 3px 3px 10px black;
 }
 
 .CitySearch,
@@ -85,20 +143,21 @@ input[type="number"] {
 
 .suggestions {
 	min-width: 200px;
-	max-width: 300px;
-	max-height: 12em;
+	max-width: 250px;
+	list-style: none;
 	position: relative;
-	overflow: scroll;
-	border: 2px solid var(--yellow);
+	justify-self: center;
+	background-color: var(--lite-secondary);
+	border: 2px solid var(--highlight);
+	border-radius: 4px;
 	font-size: 14px;
-	box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 10px 16px -12px #141303;
 }
 
 .suggestions > li {
 	text-align: left;
-	padding: 8px 6px 8px 10px;
-	background-color: var(--lite-pink);
-	color: white;
+	padding: 4px 0px 4px 14px;
+	color: var(--highlight);
 	cursor: default;
 }
 
@@ -108,7 +167,27 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-	background-color: #bcdcdb;
+	color: var(--secondary);
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.events-by-city,
+.events-by-genre {
+	display: flex;
+	flex-direction: column;
+}
+
+h4 {
+	display: inline-block;
+	text-align: center;
+	text-shadow: 3px 3px 10px black;
+	margin-top: 0.5em;
+}
+.custom-tooltip {
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 
 .event {
@@ -116,15 +195,19 @@ input[type="number"] {
 	padding: 10px 10px 35px;
 	margin-bottom: 10px;
 	text-align: left;
-	border: 3px solid var(--blue);
-	background-color: var(--lite-blue);
-	border-radius: 4px;
+	text-shadow: 3px 3px 15px black;
+	border: 2px solid var(--secondary);
+	background-color: var(--lite-secondary);
+	border-radius: 10px;
 	position: relative;
+	box-shadow: 10px 10px 32px -12px #141303;
 }
 
-.event-title {
+.event-title,
+.about-heading {
 	margin-bottom: 6px;
 	margin-top: 10px;
+	text-shadow: 3px 3px px black;
 }
 
 .details-button {
@@ -135,9 +218,10 @@ input[type="number"] {
 	border-radius: 4px;
 	outline: none;
 	cursor: pointer;
-	background-color: var(--yellow);
-	color: var(--blue);
+	background-color: var(--highlight);
+	color: var(--secondary);
 	border-color: #978e0d;
+	box-shadow: 10px 10px 10px -12px #141303;
 	margin-bottom: 10px;
 	margin-top: 6px;
 	margin-right: 5px;
@@ -172,18 +256,18 @@ input[type="number"] {
 
 .Alert {
 	position: relative;
-	top: 20px;
 }
 
-.data-vis-wrapper {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
-.data-vis-wrapper .recharts-responsive-container {
-	min-width: 100%;
-	display: flex;
-}
+// .data-vis-wrapper {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	flex-direction: row;
+// }
+// .data-vis-wrapper .recharts-responsive-container {
+// 	min-width: 100%;
+// 	display: flex;
+// }
 .recharts-surface {
 	overflow: visible;
 }
