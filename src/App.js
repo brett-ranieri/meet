@@ -40,7 +40,6 @@ class App extends Component {
 		const authorized = code || isTokenValid;
 		const isLocal = window.location.href.indexOf("localhost") > -1 ? true : false;
 		this.setState({ isLocal: isLocal });
-		console.log("local? ", isLocal);
 		if ((authorized || isLocal) && this.mounted) {
 			getEvents().then((events) => {
 				if (this.mounted) {
@@ -63,7 +62,6 @@ class App extends Component {
 			const city = location.split(", ").shift();
 			return { city, number };
 		});
-		console.log("data ", data);
 		return data;
 	};
 
