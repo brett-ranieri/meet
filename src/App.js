@@ -31,11 +31,14 @@ class App extends Component {
 
 	async componentDidMount() {
 		this.mounted = true;
+		console.log("mounted");
+		console.log(this.state.showWelcomeScreen);
 		const accessToken = localStorage.getItem("access_token");
 		const isTokenValid = (await checkToken(accessToken)).error ? false : true;
 		const searchParams = new URLSearchParams(window.location.search);
 		const code = searchParams.get("code");
 		this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+		console.log("second ", this.state.showWelcomeScreen);
 		if ((code || isTokenValid) && this.mounted) {
 			getEvents().then((events) => {
 				if (this.mounted) {
