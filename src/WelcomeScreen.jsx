@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.scss";
 
 function WelcomeScreen(props) {
 	return props.showWelcomeScreen ? (
