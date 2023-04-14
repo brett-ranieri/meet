@@ -165,11 +165,17 @@ class App extends Component {
 											type='category'
 											name='City'
 											allowDuplicatedCategory={false}
+											axisLine={{ stroke: "#fff685" }}
+											tick={{ fill: "#fff685" }}
+											tickLine={{ stroke: "#fff685" }}
 										/>
 										<YAxis
 											dataKey='number'
 											type='number'
 											name='Number of Events'
+											axisLine={{ stroke: "#fff685" }}
+											tick={{ fill: "#fff685" }}
+											tickLine={{ stroke: "#fff685" }}
 										/>
 										<Tooltip
 											content={this.CustomToolTip}
