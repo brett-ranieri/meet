@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.scss";
-import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
@@ -110,9 +109,10 @@ class App extends Component {
 				<Row className='justify-content-center mb-3'>
 					<Col
 						xs='auto'
-						sm={6}
-						md={4}
-						className=''
+						sm='auto'
+						md='auto'
+						lg='auto'
+						xl='auto'
 					>
 						<CitySearch
 							locations={this.state.locations}
@@ -121,8 +121,10 @@ class App extends Component {
 					</Col>
 					<Col
 						xs='auto'
-						sm={6}
-						md={4}
+						sm='auto'
+						md='auto'
+						lg='auto'
+						xl='auto'
 					>
 						<NumberOfEvents
 							numberOfEvents={this.state.numberOfEvents}
@@ -132,18 +134,19 @@ class App extends Component {
 				</Row>
 				<div className='app_event_list'>
 					<Row className='justify-content-center'>
-						{/* <div className='data-vis-wrapper'> */}
 						<Col
 							xs='auto'
-							sm={3}
-							md={4}
+							sm='auto'
+							md='auto'
 						>
 							<EventGenre events={this.state.events} />
 						</Col>
+					</Row>
+					<Row className='justify-content-center'>
 						<Col
 							xs='auto'
-							sm={9}
-							md={8}
+							sm={12}
+							md={12}
 						>
 							<div className='events-by-city'>
 								<h4 className='events-by-city-label'>Events in Each City</h4>
@@ -172,13 +175,6 @@ class App extends Component {
 											content={this.CustomToolTip}
 											cursor={{ strokeDasharray: "3 3" }}
 										/>
-										{/* <ZAxis
-							dataKey='z'
-							type='number'
-							range={[64, 144]}
-							name='score'
-							unit='km'
-						/> */}
 										<Scatter
 											data={this.getData()}
 											fill='#fff685'
@@ -187,7 +183,6 @@ class App extends Component {
 								</ResponsiveContainer>
 							</div>
 						</Col>
-						{/* </div> */}
 					</Row>
 
 					<EventList events={this.state.events} />
