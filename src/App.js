@@ -31,11 +31,14 @@ class App extends Component {
 
 	async componentDidMount() {
 		this.mounted = true;
+		console.log("mounted");
+		console.log(this.state.showWelcomeScreen);
 		const accessToken = localStorage.getItem("access_token");
 		const isTokenValid = (await checkToken(accessToken)).error ? false : true;
 		const searchParams = new URLSearchParams(window.location.search);
 		const code = searchParams.get("code");
 		this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+		console.log("second ", this.state.showWelcomeScreen);
 		if ((code || isTokenValid) && this.mounted) {
 			getEvents().then((events) => {
 				if (this.mounted) {
@@ -112,106 +115,112 @@ class App extends Component {
 	};
 
 	render() {
-		if (this.state.showWelcomeScreen === undefined) return <div className='App' />;
-		return (
-			<div className='App'>
-				<WarningAlert text={this.state.warningText} />
-				<h1>MEET APP</h1>
-				<Row className='justify-content-center mb-3'>
-					<Col
-						xs='auto'
-						sm='auto'
-						md='auto'
-						lg='auto'
-						xl='auto'
-					>
-						<CitySearch
-							locations={this.state.locations}
-							updateEvents={this.updateEvents}
-						/>
-					</Col>
-					<Col
-						xs='auto'
-						sm='auto'
-						md='auto'
-						lg='auto'
-						xl='auto'
-					>
-						<NumberOfEvents
-							numberOfEvents={this.state.numberOfEvents}
-							updateEvents={this.updateEvents}
-						/>
-					</Col>
-				</Row>
-				<div className='app_event_list'>
-					<Row className='justify-content-center'>
+		const showWelcomeScreen = this.state.showWelcomeScreen;
+		if (showWelcomeScreen === undefined) return <div className='App' />;
+		if (showWelcomeScreen === false) {
+			return (
+				<div className='App'>
+					<WarningAlert text={this.state.warningText} />
+					<h1>MEET APP</h1>
+					<Row className='justify-content-center mb-3'>
 						<Col
 							xs='auto'
 							sm='auto'
 							md='auto'
+							lg='auto'
+							xl='auto'
 						>
-							<EventGenre events={this.state.events} />
+							<CitySearch
+								locations={this.state.locations}
+								updateEvents={this.updateEvents}
+							/>
 						</Col>
-					</Row>
-					<Row className='justify-content-center'>
 						<Col
 							xs='auto'
-							sm={12}
-							md={12}
+							sm='auto'
+							md='auto'
+							lg='auto'
+							xl='auto'
 						>
-							<div className='events-by-city'>
-								<h4 className='events-by-city-label'>Events in Each City</h4>
-								<ResponsiveContainer height={250}>
-									<ScatterChart
-										margin={{
-											top: 20,
-											right: 20,
-											bottom: 10,
-											left: 0,
-										}}
-									>
-										<CartesianGrid strokeDasharray='3 3' />
-										<XAxis
-											dataKey='city'
-											type='category'
-											name='City'
-											allowDuplicatedCategory={false}
-											axisLine={{ stroke: "#fff685" }}
-											tick={{ fill: "#fff685" }}
-											tickLine={{ stroke: "#fff685" }}
-										/>
-										<YAxis
-											dataKey='number'
-											type='number'
-											name='Number of Events'
-											axisLine={{ stroke: "#fff685" }}
-											tick={{ fill: "#fff685" }}
-											tickLine={{ stroke: "#fff685" }}
-										/>
-										<Tooltip
-											content={this.CustomToolTip}
-											cursor={{ strokeDasharray: "3 3" }}
-										/>
-										<Scatter
-											data={this.getData()}
-											fill='#fff685'
-										/>
-									</ScatterChart>
-								</ResponsiveContainer>
-							</div>
+							<NumberOfEvents
+								numberOfEvents={this.state.numberOfEvents}
+								updateEvents={this.updateEvents}
+							/>
 						</Col>
 					</Row>
+					<div className='app_event_list'>
+						<Row className='justify-content-center'>
+							<Col
+								xs='auto'
+								sm='auto'
+								md='auto'
+							>
+								<EventGenre events={this.state.events} />
+							</Col>
+						</Row>
+						<Row className='justify-content-center'>
+							<Col
+								xs='auto'
+								sm={12}
+								md={12}
+							>
+								<div className='events-by-city'>
+									<h4 className='events-by-city-label'>Events in Each City</h4>
+									<ResponsiveContainer height={250}>
+										<ScatterChart
+											margin={{
+												top: 20,
+												right: 20,
+												bottom: 10,
+												left: 0,
+											}}
+										>
+											<CartesianGrid strokeDasharray='3 3' />
+											<XAxis
+												dataKey='city'
+												type='category'
+												name='City'
+												allowDuplicatedCategory={false}
+												axisLine={{ stroke: "#fff685" }}
+												tick={{ fill: "#fff685" }}
+												tickLine={{ stroke: "#fff685" }}
+											/>
+											<YAxis
+												dataKey='number'
+												type='number'
+												name='Number of Events'
+												axisLine={{ stroke: "#fff685" }}
+												tick={{ fill: "#fff685" }}
+												tickLine={{ stroke: "#fff685" }}
+											/>
+											<Tooltip
+												content={this.CustomToolTip}
+												cursor={{ strokeDasharray: "3 3" }}
+											/>
+											<Scatter
+												data={this.getData()}
+												fill='#fff685'
+											/>
+										</ScatterChart>
+									</ResponsiveContainer>
+								</div>
+							</Col>
+						</Row>
 
-					<EventList events={this.state.events} />
+						<EventList events={this.state.events} />
+					</div>
 				</div>
+			);
+		} else {
+			return (
 				<WelcomeScreen
 					showWelcomeScreen={this.state.showWelcomeScreen}
 					getAccessToken={() => {
 						getAccessToken();
 					}}
 				/>
-			</div>
-		);
+			);
+		}
 	}
 }
 
