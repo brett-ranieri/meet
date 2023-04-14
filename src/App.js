@@ -27,19 +27,21 @@ class App extends Component {
 		numberOfEvents: 20,
 		warningText: "",
 		showWelcomeScreen: undefined,
+		isLocal: undefined,
 	};
 
 	async componentDidMount() {
 		this.mounted = true;
-		console.log("mounted");
-		console.log(this.state.showWelcomeScreen);
 		const accessToken = localStorage.getItem("access_token");
 		const isTokenValid = (await checkToken(accessToken)).error ? false : true;
 		const searchParams = new URLSearchParams(window.location.search);
 		const code = searchParams.get("code");
 		this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-		console.log("second ", this.state.showWelcomeScreen);
-		if ((code || isTokenValid) && this.mounted) {
+		const authorized = code || isTokenValid;
+		const isLocal = window.location.href.indexOf("localhost") > -1 ? true : false;
+		this.setState({ isLocal: isLocal });
+		console.log("local? ", isLocal);
+		if ((authorized || isLocal) && this.mounted) {
 			getEvents().then((events) => {
 				if (this.mounted) {
 					const numberOfEvents = this.state.numberOfEvents;
@@ -116,8 +118,9 @@ class App extends Component {
 
 	render() {
 		const showWelcomeScreen = this.state.showWelcomeScreen;
+		const isLocal = this.state.isLocal;
 		if (showWelcomeScreen === undefined) return <div className='App' />;
-		if (showWelcomeScreen === false) {
+		if (showWelcomeScreen === false || isLocal) {
 			return (
 				<div className='App'>
 					<WarningAlert text={this.state.warningText} />
