@@ -54,6 +54,11 @@ p {
 	display: block;
 }
 
+ul {
+	padding-left: 0;
+	display: inline-block;
+}
+
 label,
 input,
 select {
@@ -132,11 +137,11 @@ span {
 	margin: auto;
 	text-align: center;
 	align-content: center;
+	justify-content: center;
 }
 
 .suggestions {
-	min-width: 200px;
-	max-width: 250px;
+	width: 200px;
 	list-style: none;
 	position: relative;
 	justify-self: center;
@@ -144,6 +149,7 @@ span {
 	border: 2px solid var(--highlight);
 	border-radius: 4px;
 	font-size: 14px;
+	text-shadow: 3px 3px 15px black;
 	box-shadow: 10px 10px 16px -12px #141303;
 }
 
