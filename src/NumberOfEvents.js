@@ -36,7 +36,7 @@ class NumberOfEvents extends Component {
 
 	render() {
 		return (
-			<div className='NumberOfEvents'>
+			<div className='NumberOfEvents header'>
 				<label
 					for='eventNumber'
 					className='event-label'
@@ -45,7 +45,7 @@ class NumberOfEvents extends Component {
 				</label>
 				<select
 					name='eventNumber'
-					className='number-of-events'
+					className='number-of-events header'
 					type='number'
 					value={this.state.query}
 					onChange={this.handleNumberChanged}

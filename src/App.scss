@@ -1,5 +1,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap");
 
 :root {
 	--primary: #ff1d58;
@@ -9,14 +11,23 @@
 	--secondary: #0049b7;
 }
 
-.App {
+.App,
+.WelcomeScreen {
 	color: var(--highlight);
 	padding: 2% 5%;
 	background-color: var(--primary);
 }
 
+.WelcomeScreen {
+	text-align: center;
+}
+
 .App * {
 	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--primary);
 }
 
 h1 {
@@ -25,6 +36,10 @@ h1 {
 	text-shadow: 3px 3px 10px black;
 	margin-top: 1em;
 	margin-bottom: 0.5em;
+}
+
+a {
+	color: #fff;
 }
 
 p {
@@ -66,6 +81,31 @@ select {
 	align-self: center;
 	justify-self: center;
 	height: 38px;
+}
+
+span {
+	display: inline-block;
+}
+.meet,
+.meet-welcome {
+	// font-family: "Rubik Pixels", cursive;
+	font-family: "DynaPuff", cursive;
+	font-weight: 700;
+
+	letter-spacing: 0.2px;
+}
+
+.meet {
+	font-size: 6em;
+}
+
+.meet-welcome {
+	font-size: 2em;
+}
+
+.header {
+	font-family: "DynaPuff", cursive;
+	font-weight: 400;
 }
 
 .city,
@@ -126,7 +166,8 @@ select {
 	flex-direction: column;
 }
 
-h4 {
+h4,
+h6 {
 	display: inline-block;
 	text-align: center;
 	text-shadow: 3px 3px 10px black;
@@ -171,6 +212,7 @@ h4 {
 
 .details-button {
 	position: absolute;
+	font-size: 12px;
 	right: 5px;
 	bottom: 5px;
 	padding: 5px 8px;
@@ -245,15 +287,15 @@ h4 {
 }
 
 .google-btn {
-	width: 184px;
+	width: 200px;
 	height: 42px;
 	margin: 1rem;
 	background-color: #4285f4;
 	border-radius: 2px;
-	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: 3px 3px 10px 0 black;
 }
 .google-btn:hover {
-	box-shadow: 0 0 6px #4285f4;
+	box-shadow: 0 0 8px #fff685;
 }
 .google-btn:active {
 	background: #1669f2;
@@ -264,21 +306,24 @@ h4 {
 	margin-left: 1px;
 	width: 40px;
 	height: 40px;
+	// align-content: center;
+	// justify-content: center;
 	border-radius: 2px;
 	background-color: #fff;
 }
 .google-icon {
 	position: absolute;
-	margin-top: 11px;
-	margin-left: -8px;
-	width: 18px;
-	height: 18px;
+	margin-top: 9px;
+	margin-left: -12px;
+	width: 24px;
+	height: 24px;
 }
 .btn-text {
 	float: right;
-	margin: 11px 11px 0 0;
-	color: #fff;
-	font-size: 14px;
+	margin: 8px 13px 0 0;
+	// color: #fff;
+	border-radius: 2px;
+	font-size: 13px;
 	letter-spacing: 0.2px;
 	font-family: "Roboto";
 }

@@ -122,7 +122,7 @@ class App extends Component {
 			return (
 				<div className='App'>
 					<WarningAlert text={this.state.warningText} />
-					<h1>MEET APP</h1>
+					<h1 className='meet'>MEET</h1>
 					<Row className='justify-content-center mb-3'>
 						<Col
 							xs='auto'
@@ -166,7 +166,7 @@ class App extends Component {
 								md={12}
 							>
 								<div className='events-by-city'>
-									<h4 className='events-by-city-label'>Events in Each City</h4>
+									<h4 className='events-by-city-label header'>Events in Each City</h4>
 									<ResponsiveContainer height={250}>
 										<ScatterChart
 											margin={{
@@ -222,6 +222,15 @@ class App extends Component {
 				/>
 			);
 		}
+
+		// return (
+		// 	<WelcomeScreen
+		// 		showWelcomeScreen={this.state.showWelcomeScreen}
+		// 		getAccessToken={() => {
+		// 			getAccessToken();
+		// 		}}
+		// 	/>
+		// );
 	}
 }
 
