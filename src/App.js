@@ -166,7 +166,7 @@ class App extends Component {
 								md={12}
 							>
 								<div className='events-by-city'>
-									<h4 className='events-by-city-label header'>Events in Each City</h4>
+									<h4 className='events-by-city-label content'>Events in Each City</h4>
 									<ResponsiveContainer height={250}>
 										<ScatterChart
 											margin={{
