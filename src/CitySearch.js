@@ -50,7 +50,7 @@ class CitySearch extends Component {
 				<div className='CitySearch'>
 					<label
 						for='citySearch'
-						className='city_label'
+						className='city_label header'
 					>
 						Pick a City:
 					</label>
@@ -59,7 +59,7 @@ class CitySearch extends Component {
 						name='citySearch'
 						type='text'
 						placeholder='Search for a city'
-						className='city'
+						className='city header'
 						value={this.state.query}
 						onChange={this.handleInputChanged}
 						onFocus={() => {

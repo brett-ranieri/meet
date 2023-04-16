@@ -41,14 +41,14 @@ class Event extends Component {
 		const { time } = this.state;
 		return (
 			<div className='event'>
-				<h2 className='event-title'>{event.summary}</h2>
+				<h2 className='event-title header'>{event.summary}</h2>
 				<p className='event-date'>{date + " " + time}</p>
 				<p className='event-location'>
 					@{event.summary} | {event.location}
 				</p>
 				{!collapsed && (
 					<div className='event-details'>
-						<h3 className='about-heading'>About event:</h3>
+						<h3 className='about-heading header'>About event:</h3>
 						<a
 							href={event.htmlLink}
 							className='event-link'
@@ -60,7 +60,7 @@ class Event extends Component {
 				)}
 				<br />
 				<button
-					className='details-button'
+					className='details-button header'
 					onClick={() => this.toggleCollapsed()}
 				>
 					{collapsed ? "Show" : "Hide"} details

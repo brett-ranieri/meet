@@ -5,10 +5,17 @@ function WelcomeScreen(props) {
 	return props.showWelcomeScreen ? (
 		<div className='WelcomeScreen'>
 			<h1>
-				Welcome to <span>Meet</span>
+				Welcome to
+				<br />
+				<span className='meet-welcome'>Meet</span>
 			</h1>
+			<br />
 			<h4>Want to see upcoming global events for full-stack developers?</h4>
+			<br />
+			<br />
 			<h6>Sign in to start searching!</h6>
+			<br />
+			<br />
 			<div
 				className='button_cont'
 				align='center'
@@ -16,9 +23,8 @@ function WelcomeScreen(props) {
 				<div className='google-btn'>
 					<div className='google-icon-wrapper'>
 						<img
-							className='goggle-icon'
-							src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Log
-              o.svg'
+							className='google-icon'
+							src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
 							alt='Google sign-in'
 						/>
 					</div>
@@ -33,11 +39,12 @@ function WelcomeScreen(props) {
 					</button>
 				</div>
 			</div>
+			<br />
 			<a
 				href='https://brett-ranieri.github.io/meet/privacy.html'
 				rel='nofollow noopener'
 			>
-				Privay policy
+				Privacy policy
 			</a>
 		</div>
 	) : null;
