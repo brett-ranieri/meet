@@ -126,10 +126,10 @@ class App extends Component {
 					<Row className='justify-content-center mb-3'>
 						<Col
 							xs='auto'
-							sm='auto'
-							md='auto'
-							lg='auto'
-							xl='auto'
+							sm='12'
+							md='6'
+							lg='6'
+							xl='6'
 						>
 							<CitySearch
 								locations={this.state.locations}
@@ -138,10 +138,10 @@ class App extends Component {
 						</Col>
 						<Col
 							xs='auto'
-							sm='auto'
-							md='auto'
-							lg='auto'
-							xl='auto'
+							sm='12'
+							md='6'
+							lg='6'
+							xl='6'
 						>
 							<NumberOfEvents
 								numberOfEvents={this.state.numberOfEvents}
@@ -153,17 +153,17 @@ class App extends Component {
 						<Row className='justify-content-center'>
 							<Col
 								xs='auto'
-								sm='auto'
-								md='auto'
+								sm='12'
+								md='12'
+								lg='3'
 							>
 								<EventGenre events={this.state.events} />
 							</Col>
-						</Row>
-						<Row className='justify-content-center'>
 							<Col
 								xs='auto'
-								sm={12}
-								md={12}
+								sm='12'
+								md='12'
+								lg='9'
 							>
 								<div className='events-by-city'>
 									<h4 className='events-by-city-label content'>Events in Each City</h4>
