@@ -13,6 +13,7 @@ class EventList extends Component {
 						xs='auto'
 						sm={6}
 						md={4}
+						className='event-list'
 					>
 						<Event event={event} />
 					</Col>

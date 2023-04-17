@@ -45,7 +45,7 @@ class NumberOfEvents extends Component {
 				</label>
 				<select
 					name='eventNumber'
-					className='number-of-events header'
+					className='number-of-events header dropdown'
 					type='number'
 					value={this.state.query}
 					onChange={this.handleNumberChanged}
