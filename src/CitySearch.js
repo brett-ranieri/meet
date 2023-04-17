@@ -68,7 +68,7 @@ class CitySearch extends Component {
 					/>
 					<InfoAlert text={this.state.infoText} />
 					<ul
-						className='suggestions'
+						className='suggestions content'
 						style={this.state.showSuggestions ? {} : { display: "none" }}
 					>
 						{this.state.suggestions.map((suggestion) => (

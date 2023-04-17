@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap");
 
 :root {
 	--primary: #ff1d58;
@@ -51,6 +52,11 @@ p {
 }
 .showSuggestions {
 	display: block;
+}
+
+ul {
+	padding-left: 0;
+	display: inline-block;
 }
 
 label,
@@ -108,6 +114,10 @@ span {
 	font-weight: 400;
 }
 
+.content {
+	font-family: "Dosis", sans-serif;
+}
+
 .city,
 .number-of-events {
 	align-content: center;
@@ -127,11 +137,11 @@ span {
 	margin: auto;
 	text-align: center;
 	align-content: center;
+	justify-content: center;
 }
 
 .suggestions {
-	min-width: 200px;
-	max-width: 250px;
+	width: 200px;
 	list-style: none;
 	position: relative;
 	justify-self: center;
@@ -139,6 +149,7 @@ span {
 	border: 2px solid var(--highlight);
 	border-radius: 4px;
 	font-size: 14px;
+	text-shadow: 3px 3px 15px black;
 	box-shadow: 10px 10px 16px -12px #141303;
 }
 
