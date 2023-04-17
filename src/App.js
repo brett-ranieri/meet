@@ -95,7 +95,7 @@ class App extends Component {
 		if (!navigator.onLine) {
 			this.setState({
 				warningText:
-					"Looks like you're not connected to the internet. Displayed events have been loaded from local storage.",
+					"\uD83D\uDC40 Looks like you're not connected to the internet. Displayed events have been loaded from local storage.",
 			});
 		} else {
 			this.setState({ warningText: "" });
