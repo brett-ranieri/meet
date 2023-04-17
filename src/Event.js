@@ -40,7 +40,7 @@ class Event extends Component {
 		const { date } = this.state;
 		const { time } = this.state;
 		return (
-			<div className='event content'>
+			<li className='event content'>
 				<h2 className='event-title'>{event.summary}</h2>
 				<p className='event-date'>{date + " " + time}</p>
 				<p className='event-location'>
@@ -67,7 +67,7 @@ class Event extends Component {
 				>
 					{collapsed ? "Show" : "Hide"} details
 				</button>
-			</div>
+			</li>
 		);
 	}
 }

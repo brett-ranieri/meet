@@ -16,7 +16,7 @@
 .WelcomeScreen {
 	color: var(--highlight);
 	padding: 2% 5%;
-	background-color: var(--primary);
+	background-color: var(--lite-primary);
 }
 
 .WelcomeScreen {
@@ -28,7 +28,7 @@
 }
 
 body {
-	background-color: var(--primary);
+	background-color: var(--lite-primary);
 }
 
 h1 {
@@ -145,7 +145,7 @@ span {
 	list-style: none;
 	position: relative;
 	justify-self: center;
-	background-color: var(--lite-secondary);
+	background-color: var(--primary);
 	border: 2px solid var(--highlight);
 	border-radius: 4px;
 	font-size: 14px;
@@ -166,9 +166,10 @@ span {
 }
 
 .suggestions > li:hover {
-	color: var(--secondary);
+	color: white;
 	font-size: 16px;
 	font-weight: bold;
+	text-shadow: 3px 3px 7px #f75990;
 }
 
 .events-by-city,
@@ -202,6 +203,7 @@ h6 {
 }
 
 .event {
+	list-style: none;
 	margin: 1em;
 	padding: 10px 10px 35px;
 	margin-bottom: 10px;
