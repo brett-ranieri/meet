@@ -18,12 +18,6 @@ const EventGenre = ({ events }) => {
 		setEventGenreData(() => getData());
 	}, [events]);
 
-	// getData = (events) => {
-	// 	const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS"];
-	// 	const genreCount = events.filter((event) => event.summary.includes(genres).length);
-	// 	console.log(genreCount);
-	// };
-
 	return (
 		<div className='events-by-genre'>
 			<h4 className='content'>Events by Genre</h4>

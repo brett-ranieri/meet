@@ -21,17 +21,6 @@ class NumberOfEvents extends Component {
 			});
 			this.props.updateEvents(null, value);
 		}
-
-		// const element = document.querySelector("select");
-		// element.addEventListener("mousedown", function () {
-		// 	this.size = 10;
-		// });
-		// element.addEventListener("change", function () {
-		// 	this.blur();
-		// });
-		// element.addEventListener("blur", function () {
-		// 	this.size = 0;
-		// });
 	};
 
 	render() {

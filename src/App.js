@@ -222,15 +222,6 @@ class App extends Component {
 				/>
 			);
 		}
-
-		// return (
-		// 	<WelcomeScreen
-		// 		showWelcomeScreen={this.state.showWelcomeScreen}
-		// 		getAccessToken={() => {
-		// 			getAccessToken();
-		// 		}}
-		// 	/>
-		// );
 	}
 }
 
