@@ -35,7 +35,7 @@ h1 {
 	text-align: center;
 	font-size: 3em;
 	text-shadow: 3px 3px 10px black;
-	margin-top: 1em;
+	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
 
@@ -92,9 +92,9 @@ select {
 span {
 	display: inline-block;
 }
+
 .meet,
 .meet-welcome {
-	// font-family: "Rubik Pixels", cursive;
 	font-family: "DynaPuff", cursive;
 	font-weight: 700;
 
@@ -185,6 +185,7 @@ h6 {
 	text-shadow: 3px 3px 10px black;
 	margin-top: 0.5em;
 }
+
 .custom-tooltip {
 	display: inline-block;
 	text-align: center;
@@ -272,16 +273,6 @@ h6 {
 	position: relative;
 }
 
-// .data-vis-wrapper {
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	flex-direction: row;
-// }
-// .data-vis-wrapper .recharts-responsive-container {
-// 	min-width: 100%;
-// 	display: flex;
-// }
 .recharts-surface {
 	overflow: visible;
 }
@@ -319,8 +310,6 @@ h6 {
 	margin-left: 1px;
 	width: 40px;
 	height: 40px;
-	// align-content: center;
-	// justify-content: center;
 	border-radius: 2px;
 	background-color: #fff;
 }
@@ -334,7 +323,6 @@ h6 {
 .btn-text {
 	float: right;
 	margin: 8px 13px 0 0;
-	// color: #fff;
 	border-radius: 2px;
 	font-size: 13px;
 	letter-spacing: 0.2px;
