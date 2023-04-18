@@ -1,6 +1,6 @@
-# meet App
+# Meet App
 
-Application that allows users to check what events are going on in the city of their choice.
+Application that allows users to browse upcoming events going on in a multitude of international cities.
 
 ## Project Objective
 
@@ -8,18 +8,47 @@ To build a serverless, progressive web application (PWA) with React using a
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.
 
+## Get Project Running
+
+### Development
+
+- Navigate to root folder in terminal
+- Run the following `run npm start`
+- In browser, naviaget to http://localhost:3000/meet
+
+### Production
+
+Browser:
+Navigate to https://brett-ranieri.github.io/meet/
+
+- This app is still in the testing phase, you will need a valid gmail address in order to log in. This gmail address will need to be added to the list of authorized test users. If you would like to view the application let me know and I can add your email to the approved list.
+
+PWA:
+App can be installed through browser. If you are using iOS you will need to access/install via Safari as Chrome does not currently support the installation of PWAs.
+
 ## Development Dependencies
 
-- "gh-pages": "^5.0.0"
+- "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
+- "enzyme": "^3.11.0",
+- "gh-pages": "^5.0.0",
+- "jest-cucumber": "^3.0.1",
+- "puppeteer": "^18.1.0"
 
 ## Project Dependencies
 
 - "@testing-library/jest-dom": "^5.16.5",
 - "@testing-library/react": "^13.4.0",
 - "@testing-library/user-event": "^13.5.0",
+- "atatus-spa": "^4.5.0",
+- "axios": "^1.3.4",
+- "bootstrap": "^5.2.3",
+- "nprogress": "^0.2.0",
 - "react": "^18.2.0",
+- "react-bootstrap": "^2.7.2",
 - "react-dom": "^18.2.0",
 - "react-scripts": "5.0.1",
+- "recharts": "^2.5.0",
+- "sass": "^1.61.0",
 - "web-vitals": "^2.1.4",
 - "workbox-background-sync": "^6.5.4",
 - "workbox-broadcast-update": "^6.5.4",
