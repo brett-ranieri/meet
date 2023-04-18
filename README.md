@@ -2,6 +2,10 @@
 
 Application that allows users to browse upcoming events going on in a multitude of international cities.
 
+![Alt text](/img/meet_app_screenshot.png?raw=true)
+
+![Alt text](/img/meet_app_screenshot2.png?raw=true)
+
 ## Project Objective
 
 To build a serverless, progressive web application (PWA) with React using a
